@@ -28,14 +28,14 @@
 <body>
   <div class="relative flex min-h-screen flex-col bg-white overflow-x-hidden"
     style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
-    <header class="flex flex-col md:flex-row items-center justify-between border-b border-[#f4f2f0] px-4 md:px-10 py-3">
+    <!-- Navbar -->
+    <header class="flex flex-col md:flex-row items-center justify-between border-b border-[#f4f2f0] px-4 md:px-10 py-3"
+      style="margin-bottom: 0; padding-bottom: 4px; z-index: 50; position: relative; background: white;">
       <div class="flex items-center justify-between w-full md:w-auto">
         <div class="flex items-center gap-4 text-[#181411]">
           <div class="w-8 h-8">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z"
-                fill="currentColor"></path>
+              <!-- SVG Content -->
             </svg>
           </div>
           <h2 class="text-lg font-bold">Ishaan Restaurant</h2>
@@ -52,348 +52,349 @@
           <a class="text-sm font-medium w-full md:w-auto text-center py-2 md:py-0" href="#menu">Menu</a>
           <a class="text-sm font-medium w-full md:w-auto text-center py-2 md:py-0" href="#">Private Events</a>
           <a class="text-sm font-medium w-full md:w-auto text-center py-2 md:py-0" href="#">Order Online</a>
+          <button
+            class="w-full md:w-auto px-4 py-2 bg-[#ee7f2b] text-[#181411] font-bold rounded-xl text-sm mt-4 md:mt-0 md:ml-4">
+            Reserve
+          </button>
         </nav>
-        <button
-          class="w-full md:w-auto px-4 py-2 bg-[#ee7f2b] text-[#181411] font-bold rounded-xl text-sm mt-4 md:mt-0 md:ml-4">
-          Reserve
-        </button>
       </div>
     </header>
-    <!-- Rest of your content remains the same -->
-  </div>
-  <script>
-    document.getElementById('mobile-menu-button').addEventListener('click', function () {
-      document.getElementById('nav-content').classList.toggle('hidden');
-    });
-  </script>
 
+    <script>
+      document.getElementById('mobile-menu-button').addEventListener('click', function () {
+        const navContent = document.getElementById('nav-content');
+        navContent.classList.toggle('hidden');
+        navContent.classList.toggle('active');
+      });
+    </script>
 
-  <!-- Home Section -->
-  <section id="home" class="flex flex-col items-center justify-center px-4 md:px-40 py-5">
-    <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-      <!-- Welcome Banner -->
-      <div class="relative w-full">
-        <div class="flex flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-start justify-end px-4 pb-10"
-          style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://cdn.usegalileo.ai/sdxl10/4d21bf25-65e6-41c2-bca7-f5bab0c417d0.png");'>
-          <div class="flex flex-col gap-2 text-left">
-            <h1 class="text-white text-4xl font-black leading-tight tracking-tight md:text-5xl">
-              Welcome to Ishaan Restaurant
-            </h1>
-            <h2 class="text-white text-sm font-normal leading-normal md:text-base">
-              A warm and inviting French bistro nestled in the heart of San Francisco's Financial District. Inspired by
-              classic French cuisine, our menu is designed to
-              delight both the discerning gourmand and those new to the delights of French cooking.
-            </h2>
+    <section id="home" class="items-center justify-center px-4 md:px-40" style="padding-top: 80px;">
+      <div class="max-w-[960px]">
+        <div class="relative w-full">
+          <div
+            class="flex flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-start justify-end px-4 pb-10 min-h-[400px]"
+            style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://cdn.usegalileo.ai/sdxl10/4d21bf25-65e6-41c2-bca7-f5bab0c417d0.png");'>
+            <div class="flex flex-col gap-2 text-left">
+              <h1 class="text-white text-4xl font-black leading-tight tracking-tight md:text-5xl">
+                Welcome to Ishaan Restaurant
+              </h1>
+              <h2 class="text-white text-sm font-normal leading-normal md:text-base">
+                A warm and inviting French bistro nestled in the heart of San Francisco's Financial District. Inspired
+                by
+                classic French cuisine, our menu is designed to delight both the discerning gourmand and those new to
+                the
+                delights of French cooking.
+              </h2>
+            </div>
+            <button class="mt-4 px-4 py-2 bg-[#ee7f2b] text-[#181411] font-bold rounded-xl text-sm md:text-base"
+              onclick="document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });">
+              Explore Menu
+            </button>
           </div>
-          <button class="mt-4 px-4 py-2 bg-[#ee7f2b] text-[#181411] font-bold rounded-xl text-sm md:text-base"
-            onclick="document.getElementById('menu').scrollIntoView({ behavior: 'smooth' }); ">
-            Explore Menu
-          </button>
         </div>
-      </div>
 
-      <!-- Location & Hours -->
-      <div class="flex flex-col gap-10 px-4 py-10">
-        <div class="flex flex-col gap-4">
-          <h1 class="text-[#181411] text-2xl font-bold">Location &amp; Hours</h1>
-          <p class="text-[#181411] text-base">
-            We are located on the corner of Main St and First St, near the Embarcadero BART station, and a short walk
-            from the Transamerica Pyramid. Street parking is
-            available nearby, or use the Valet service at the Harbor Court Hotel. We are open for lunch and dinner
-            Monday through Friday, and for dinner only on Saturday. We
-            offer indoor dining, as well as outdoor seating on our heated patio. Reservations are recommended, but not
-            required. For private events, please contact us for
-            details and availability.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Location Card -->
-          <div class="flex items-center gap-3 bg-white p-4 rounded-lg border border-[#e6e0db]">
-            <div class="text-[#181411]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
-                viewBox="0 0 256 256">
-                <path
-                  d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z">
-                </path>
-              </svg>
+        <!-- Location & Hours -->
+        <div class="flex flex-col gap-10 px-4 py-10">
+          <div class="flex flex-col gap-4">
+            <h1 class="text-[#181411] text-2xl font-bold">Location &amp; Hours</h1>
+            <p class="text-[#181411] text-base">
+              We are located on the corner of Main St and First St, near the Embarcadero BART station, and a short walk
+              from the Transamerica Pyramid. Street parking is
+              available nearby, or use the Valet service at the Harbor Court Hotel. We are open for lunch and dinner
+              Monday through Friday, and for dinner only on Saturday. We
+              offer indoor dining, as well as outdoor seating on our heated patio. Reservations are recommended, but not
+              required. For private events, please contact us for
+              details and availability.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Location Card -->
+            <div class="flex items-center gap-3 bg-white p-4 rounded-lg border border-[#e6e0db]">
+              <div class="text-[#181411]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <h2 class="text-base font-bold">Financial District</h2>
+                <p class="text-sm text-[#897361]">123 Main St, San Francisco, CA 94105</p>
+              </div>
+            </div>
+            <!-- Hours Card -->
+            <div class="flex items-center gap-3 bg-white p-4 rounded-lg border border-[#e6e0db]">
+              <div class="text-[#181411]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <h2 class="text-base font-bold">Mon - Fri: 11 am - 10 pm</h2>
+                <p class="text-sm text-[#897361]">Sat: 5 pm - 10 pm</p>
+              </div>
+            </div>
+            <!-- Contact Card -->
+            <div class="flex items-center gap-3 bg-white p-4 rounded-lg border border-[#e6e0db]">
+              <div class="text-[#181411]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                  viewBox="0 0 256 256">
+                  <path
+                    d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z">
+                  </path>
+                </svg>
+              </div>
+              <div>
+                <h2 class="text-base font-bold">415-555-1234</h2>
+                <p class="text-sm text-[#897361]">thisdemo@gmail.com</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image Gallery -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div>
+              <div class="w-full h-48 bg-center bg-no-repeat bg-cover rounded-xl"
+                style='background-image: url("https://cdn.usegalileo.ai/sdxl10/06415213-3793-4c33-b4ba-bf164a828bb2.png");'>
+              </div>
             </div>
             <div>
-              <h2 class="text-base font-bold">Financial District</h2>
-              <p class="text-sm text-[#897361]">123 Main St, San Francisco, CA 94105</p>
-            </div>
-          </div>
-          <!-- Hours Card -->
-          <div class="flex items-center gap-3 bg-white p-4 rounded-lg border border-[#e6e0db]">
-            <div class="text-[#181411]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
-                viewBox="0 0 256 256">
-                <path
-                  d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z">
-                </path>
-              </svg>
+              <div class="w-full h-48 bg-center bg-no-repeat bg-cover rounded-xl"
+                style='background-image: url("https://cdn.usegalileo.ai/sdxl10/0ff29615-b339-49d5-857e-c74060c1f63e.png");'>
+              </div>
             </div>
             <div>
-              <h2 class="text-base font-bold">Mon - Fri: 11 am - 10 pm</h2>
-              <p class="text-sm text-[#897361]">Sat: 5 pm - 10 pm</p>
-            </div>
-          </div>
-          <!-- Contact Card -->
-          <div class="flex items-center gap-3 bg-white p-4 rounded-lg border border-[#e6e0db]">
-            <div class="text-[#181411]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
-                viewBox="0 0 256 256">
-                <path
-                  d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z">
-                </path>
-              </svg>
+              <div class="w-full h-48 bg-center bg-no-repeat bg-cover rounded-xl"
+                style='background-image: url("https://cdn.usegalileo.ai/sdxl10/6823e539-b92e-44c7-a731-bd351790cf24.png");'>
+              </div>
             </div>
             <div>
-              <h2 class="text-base font-bold">415-555-1234</h2>
-              <p class="text-sm text-[#897361]">thisdemo@gmail.com</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Image Gallery -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div>
-            <div class="w-full h-48 bg-center bg-no-repeat bg-cover rounded-xl"
-              style='background-image: url("https://cdn.usegalileo.ai/sdxl10/06415213-3793-4c33-b4ba-bf164a828bb2.png");'>
-            </div>
-          </div>
-          <div>
-            <div class="w-full h-48 bg-center bg-no-repeat bg-cover rounded-xl"
-              style='background-image: url("https://cdn.usegalileo.ai/sdxl10/0ff29615-b339-49d5-857e-c74060c1f63e.png");'>
-            </div>
-          </div>
-          <div>
-            <div class="w-full h-48 bg-center bg-no-repeat bg-cover rounded-xl"
-              style='background-image: url("https://cdn.usegalileo.ai/sdxl10/6823e539-b92e-44c7-a731-bd351790cf24.png");'>
-            </div>
-          </div>
-          <div>
-            <div class="w-full h-48 bg-center bg-no-repeat bg-cover rounded-xl"
-              style='background-image: url("https://cdn.usegalileo.ai/sdxl10/b4e308e2-59d1-4b5d-9c8f-4adbc6461a6c.png");'>
+              <div class="w-full h-48 bg-center bg-no-repeat bg-cover rounded-xl"
+                style='background-image: url("https://cdn.usegalileo.ai/sdxl10/b4e308e2-59d1-4b5d-9c8f-4adbc6461a6c.png");'>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Menu Section -->
-  <section id="menu" class="flex flex-col items-center justify-center px-4 md:px-40 py-5 bg-gray-50">
-    <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-      <div class="flex flex-wrap justify-between items-center gap-3 mb-6">
-        <p class="text-[#181411] tracking-light text-2xl font-bold">Our Menu</p>
-      </div>
-
-      <!-- Menu Categories -->
-      <div class="space-y-8">
-        <!-- Starters -->
-        <div>
-          <h3 class="text-[#181411] text-lg font-bold mb-4">Starters</h3>
-          <div class="grid gap-4">
-            <div
-            class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
-            <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
-              <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/71ecce3c-9971-4ca3-9ab5-0a8726292d74.png");'>
-                </div>
-                <div>
-                  <p class="text-base font-medium">Pretzel</p>
-                  <p class="text-sm text-[#897361]">Baked pretzel, beer cheese, mustard</p>
-                </div>
-              </div>
-              <div class="mt-2 sm:mt-0">
-                <p class="text-base">$12.00</p>
-              </div>
-            </div>
-
-            <!-- Menu Item 2 -->
-            <div
-            class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
-            <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
-              <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/71ecce3c-9971-4ca3-9ab5-0a8726292d74.png");'>
-                </div>
-                <div>
-                  <p class="text-base font-medium">Pretzel</p>
-                  <p class="text-sm text-[#897361]">Baked pretzel, beer cheese, mustard</p>
-                </div>
-              </div>
-              <div class="mt-2 sm:mt-0">
-                <p class="text-base">$12.00</p>
-              </div>
-            </div>
-
-            <!-- Menu Item 3 -->
-            <div
-            class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
-            <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
-              <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/49a7268d-19d5-435d-b245-28d0a6e46807.png");'>
-                </div>
-                <div>
-                  <p class="text-base font-medium">Fried Pickles</p>
-                  <p class="text-sm text-[#897361]">Dill pickles, panko breaded, ranch dressing</p>
-                </div>
-              </div>
-              <div class="mt-2 sm:mt-0">
-                <p class="text-base">$10.00</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Salads -->
-          <h3 class="text-[#181411] text-lg font-bold mb-4">Salads</h3>
-          <div class="grid gap-4">
-            <!-- Salad Item 1 -->
-            <div
-            class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
-            <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
-              <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
-                  style='background-image: url("https://imgs.search.brave.com/RcTrnJplslo9955D-QopORkyc2OxdJFXBX3eKgKhI3Y/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvODU2/NDIxMzYvcGhvdG8v/c2FsYWQuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPUFFY0tn/NFQ0UDV4RHBYZy1m/d0RsNzBpb1JDdFhO/dDBLaWhDRmVmby1O/UE09");'>
-                </div>
-                <div>
-                  <p class="text-base font-medium">Caesar Salad</p>
-                  <p class="text-sm text-[#897361]">Romaine lettuce, croutons, parmesan cheese, Caesar dressing</p>
-                </div>
-              </div>
-              <div class="mt-2 sm:mt-0">
-                <p class="text-base">$14.00</p>
-              </div>
-            </div>
-
-            <!-- Salad Item 2 -->
-            <div
-            class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
-            <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
-              <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/9bd3327e-508c-4764-aa20-fa1742f71e26.png");'>
-                </div>
-                <div>
-                  <p class="text-base font-medium">Superfood Salad</p>
-                  <p class="text-sm text-[#897361]">Kale, quinoa, roasted vegetables, lemon tahini dressing</p>
-                </div>
-              </div>
-              <div class="mt-2 sm:mt-0">
-                <p class="text-base">$16.00</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Entrees -->
-          <h3 class="text-[#181411] text-lg font-bold mb-4">Entrees</h3>
-          <div class="grid gap-4">
-            <!-- Entree Item 1 -->
-            <div
-            class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
-            <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
-              <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
-                  style='background-image: url("https://imgs.search.brave.com/RcTrnJplslo9955D-QopORkyc2OxdJFXBX3eKgKhI3Y/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvODU2/NDIxMzYvcGhvdG8v/c2FsYWQuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPUFFY0tn/NFQ0UDV4RHBYZy1m/d0RsNzBpb1JDdFhO/dDBLaWhDRmVmby1O/UE09");'>
-                </div>
-                <div>
-                  <p class="text-base font-medium">Grilled Salmon</p>
-                  <p class="text-sm text-[#897361]">Grilled salmon, asparagus, roasted potatoes, dill cream sauce</p>
-                </div>
-              </div>
-              <div class="mt-2 sm:mt-0">
-                <p class="text-base">$28.00</p>
-              </div>
-            </div>
-
-            <!-- Entree Item 2 -->
-            <div
-            class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
-            <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
-              <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/8e368c2a-9f8d-4e5b-90d6-0b60d6571309.png");'>
-                </div>
-                <div>
-                  <p class="text-base font-medium">Short Rib</p>
-                  <p class="text-sm text-[#897361]">Braised short rib, garlic mashed potatoes, sauteed green beans</p>
-                </div>
-              </div>
-              <div class="mt-2 sm:mt-0">
-                <p class="text-base">$30.00</p>
-              </div>
-            </div>
-
-            <!-- Entree Item 3 -->
-            <div
-            class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
-            <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
-              <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/3d36b9e2-ab3d-4d75-8f18-c3ef625bb375.png");'>
-                </div>
-                <div>
-                  <p class="text-base font-medium">Herb Chicken</p>
-                  <p class="text-sm text-[#897361]">Lemon herb chicken, wild rice pilaf, grilled vegetables</p>
-                </div>
-              </div>
-              <div class="mt-2 sm:mt-0">
-                <p class="text-base">$26.00</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Desserts -->
-          <h3 class="text-[#181411] text-lg font-bold mb-4">Desserts</h3>
-          <div class="grid gap-4">
-            <!-- Dessert Item 1 -->
-            <div
-            class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
-            <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
-              <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
-                  style='background-image: url("https://cdn.usegalileo.ai/stability/35613e03-2781-44fc-a042-d31da48b8b10.png");'>
-                </div>
-                <div>
-                  <p class="text-base font-medium">Cheesecake</p>
-                  <p class="text-sm text-[#897361]">New York style cheesecake, berry compote</p>
-                </div>
-              </div>
-              <div class="mt-2 sm:mt-0">
-                <p class="text-base">$10.00</p>
-              </div>
-            </div>
-
-            <!-- Dessert Item 2 -->
-            <div
-            class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
-            <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
-              <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/9fd043eb-a962-4ab3-b44c-ee98235a34ed.png");'>
-                </div>
-                <div>
-                  <p class="text-base font-medium">Cookie Sundae</p>
-                  <p class="text-sm text-[#897361]">Warm chocolate chip cookie, vanilla ice cream</p>
-                </div>
-              </div>
-              <div class="mt-2 sm:mt-0">
-                <p class="text-base">$8.00</p>
-              </div>
-            </div>
-
-            <!-- Dessert Item 3 -->
-            <div
-            class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
-            <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
-              <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/e90dcf13-9421-4732-956b-d868c5d6a89e.png");'>
-                </div>
-                <div>
-                  <p class="text-base font-medium">Sorbet</p>
-                  <p class="text-sm text-[#897361]">Seasonal fruit sorbet, almond biscotti</p>
-                </div>
-              </div>
-              <div class="mt-2 sm:mt-0">
-                <p class="text-base">$9.00</p>
-              </div>
-            </div>
-          </div>
+    <!-- Menu Section -->
+    <section id="menu" class="flex flex-col items-center justify-center px-4 md:px-40 py-5 bg-gray-50">
+      <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+        <div class="flex flex-wrap justify-between items-center gap-3 mb-6">
+          <p class="text-[#181411] tracking-light text-2xl font-bold">Our Menu</p>
         </div>
-  </section>
+
+        <!-- Menu Categories -->
+        <div class="space-y-8">
+          <!-- Starters -->
+          <div>
+            <h3 class="text-[#181411] text-lg font-bold mb-4">Starters</h3>
+            <div class="grid gap-4">
+              <div
+                class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
+                <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
+                  <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
+                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/71ecce3c-9971-4ca3-9ab5-0a8726292d74.png");'>
+                  </div>
+                  <div>
+                    <p class="text-base font-medium">Pretzel</p>
+                    <p class="text-sm text-[#897361]">Baked pretzel, beer cheese, mustard</p>
+                  </div>
+                </div>
+                <div class="mt-2 sm:mt-0">
+                  <p class="text-base">$12.00</p>
+                </div>
+              </div>
+
+              <!-- Menu Item 2 -->
+              <div
+                class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
+                <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
+                  <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
+                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/71ecce3c-9971-4ca3-9ab5-0a8726292d74.png");'>
+                  </div>
+                  <div>
+                    <p class="text-base font-medium">Pretzel</p>
+                    <p class="text-sm text-[#897361]">Baked pretzel, beer cheese, mustard</p>
+                  </div>
+                </div>
+                <div class="mt-2 sm:mt-0">
+                  <p class="text-base">$12.00</p>
+                </div>
+              </div>
+
+              <!-- Menu Item 3 -->
+              <div
+                class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
+                <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
+                  <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
+                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/49a7268d-19d5-435d-b245-28d0a6e46807.png");'>
+                  </div>
+                  <div>
+                    <p class="text-base font-medium">Fried Pickles</p>
+                    <p class="text-sm text-[#897361]">Dill pickles, panko breaded, ranch dressing</p>
+                  </div>
+                </div>
+                <div class="mt-2 sm:mt-0">
+                  <p class="text-base">$10.00</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Salads -->
+            <h3 class="text-[#181411] text-lg font-bold mb-4">Salads</h3>
+            <div class="grid gap-4">
+              <!-- Salad Item 1 -->
+              <div
+                class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
+                <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
+                  <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
+                    style='background-image: url("https://imgs.search.brave.com/RcTrnJplslo9955D-QopORkyc2OxdJFXBX3eKgKhI3Y/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvODU2/NDIxMzYvcGhvdG8v/c2FsYWQuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPUFFY0tn/NFQ0UDV4RHBYZy1m/d0RsNzBpb1JDdFhO/dDBLaWhDRmVmby1O/UE09");'>
+                  </div>
+                  <div>
+                    <p class="text-base font-medium">Caesar Salad</p>
+                    <p class="text-sm text-[#897361]">Romaine lettuce, croutons, parmesan cheese, Caesar dressing</p>
+                  </div>
+                </div>
+                <div class="mt-2 sm:mt-0">
+                  <p class="text-base">$14.00</p>
+                </div>
+              </div>
+
+              <!-- Salad Item 2 -->
+              <div
+                class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
+                <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
+                  <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
+                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/9bd3327e-508c-4764-aa20-fa1742f71e26.png");'>
+                  </div>
+                  <div>
+                    <p class="text-base font-medium">Superfood Salad</p>
+                    <p class="text-sm text-[#897361]">Kale, quinoa, roasted vegetables, lemon tahini dressing</p>
+                  </div>
+                </div>
+                <div class="mt-2 sm:mt-0">
+                  <p class="text-base">$16.00</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Entrees -->
+            <h3 class="text-[#181411] text-lg font-bold mb-4">Entrees</h3>
+            <div class="grid gap-4">
+              <!-- Entree Item 1 -->
+              <div
+                class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
+                <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
+                  <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
+                    style='background-image: url("https://imgs.search.brave.com/RcTrnJplslo9955D-QopORkyc2OxdJFXBX3eKgKhI3Y/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvODU2/NDIxMzYvcGhvdG8v/c2FsYWQuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPUFFY0tn/NFQ0UDV4RHBYZy1m/d0RsNzBpb1JDdFhO/dDBLaWhDRmVmby1O/UE09");'>
+                  </div>
+                  <div>
+                    <p class="text-base font-medium">Grilled Salmon</p>
+                    <p class="text-sm text-[#897361]">Grilled salmon, asparagus, roasted potatoes, dill cream sauce</p>
+                  </div>
+                </div>
+                <div class="mt-2 sm:mt-0">
+                  <p class="text-base">$28.00</p>
+                </div>
+              </div>
+
+              <!-- Entree Item 2 -->
+              <div
+                class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
+                <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
+                  <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
+                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/8e368c2a-9f8d-4e5b-90d6-0b60d6571309.png");'>
+                  </div>
+                  <div>
+                    <p class="text-base font-medium">Short Rib</p>
+                    <p class="text-sm text-[#897361]">Braised short rib, garlic mashed potatoes, sauteed green beans</p>
+                  </div>
+                </div>
+                <div class="mt-2 sm:mt-0">
+                  <p class="text-base">$30.00</p>
+                </div>
+              </div>
+
+              <!-- Entree Item 3 -->
+              <div
+                class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
+                <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
+                  <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
+                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/3d36b9e2-ab3d-4d75-8f18-c3ef625bb375.png");'>
+                  </div>
+                  <div>
+                    <p class="text-base font-medium">Herb Chicken</p>
+                    <p class="text-sm text-[#897361]">Lemon herb chicken, wild rice pilaf, grilled vegetables</p>
+                  </div>
+                </div>
+                <div class="mt-2 sm:mt-0">
+                  <p class="text-base">$26.00</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Desserts -->
+            <h3 class="text-[#181411] text-lg font-bold mb-4">Desserts</h3>
+            <div class="grid gap-4">
+              <!-- Dessert Item 1 -->
+              <div
+                class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
+                <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
+                  <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
+                    style='background-image: url("https://cdn.usegalileo.ai/stability/35613e03-2781-44fc-a042-d31da48b8b10.png");'>
+                  </div>
+                  <div>
+                    <p class="text-base font-medium">Cheesecake</p>
+                    <p class="text-sm text-[#897361]">New York style cheesecake, berry compote</p>
+                  </div>
+                </div>
+                <div class="mt-2 sm:mt-0">
+                  <p class="text-base">$10.00</p>
+                </div>
+              </div>
+
+              <!-- Dessert Item 2 -->
+              <div
+                class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
+                <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
+                  <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
+                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/9fd043eb-a962-4ab3-b44c-ee98235a34ed.png");'>
+                  </div>
+                  <div>
+                    <p class="text-base font-medium">Cookie Sundae</p>
+                    <p class="text-sm text-[#897361]">Warm chocolate chip cookie, vanilla ice cream</p>
+                  </div>
+                </div>
+                <div class="mt-2 sm:mt-0">
+                  <p class="text-base">$8.00</p>
+                </div>
+              </div>
+
+              <!-- Dessert Item 3 -->
+              <div
+                class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg border border-[#e6e0db]">
+                <div class="flex items-start sm:items-center gap-4 w-full sm:w-auto">
+                  <div class="w-16 h-16 bg-center bg-no-repeat bg-cover rounded-lg"
+                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/e90dcf13-9421-4732-956b-d868c5d6a89e.png");'>
+                  </div>
+                  <div>
+                    <p class="text-base font-medium">Sorbet</p>
+                    <p class="text-sm text-[#897361]">Seasonal fruit sorbet, almond biscotti</p>
+                  </div>
+                </div>
+                <div class="mt-2 sm:mt-0">
+                  <p class="text-base">$9.00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
   </div>
 
   <!-- Enhanced Footer -->
